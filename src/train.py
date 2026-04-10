@@ -9,9 +9,7 @@ from features import add_technical_indicators, create_binary_target
 def train_model():
     print("Training started...\n")
 
-    # -----------------------------
-    # Load Multiple Stocks
-    # -----------------------------
+ 
 
     tickers = ["AAPL", "MSFT", "GOOGL"]
 
@@ -47,9 +45,7 @@ def train_model():
 
     print("\nTotal combined rows:", len(df))
 
-    # -----------------------------
-    # Feature Selection
-    # -----------------------------
+   
 
     feature_columns = [
         "Close",
@@ -69,9 +65,7 @@ def train_model():
     X = df[feature_columns]
     y = df["High_Risk"]
 
-    # -----------------------------
-    # TimeSeries Cross Validation
-    # -----------------------------
+
 
     print("\nRunning TimeSeries Cross Validation...")
 
@@ -90,9 +84,6 @@ def train_model():
     print("TimeSeries CV Scores:", cv_scores)
     print("Average CV Accuracy:", round(cv_scores.mean(), 4))
 
-    # -----------------------------
-    # Train/Test Split (80/20)
-    # -----------------------------
 
     split_index = int(len(df) * 0.8)
 
